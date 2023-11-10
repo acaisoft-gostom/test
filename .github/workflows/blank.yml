@@ -55,19 +55,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-         echo test, and deploy your project. 
-# jobs:
-#   container-test-job:
-#     runs-on: ubuntu-latest
-#     container:
-#       image: gcr.io/att-equality-first/acai-gh-actions-workers:v1.0.0
-#       env:
-#         NODE_ENV: development
-#       ports:
-#         - 80
-#       volumes:
-#         - my_docker_volume:/volume_mount
-#       options: --cpus 1
-#     steps:
-#       - name: Check for dockerenv file
-#         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+          echo test, and deploy your project. 
