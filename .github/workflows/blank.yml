@@ -41,7 +41,7 @@ jobs:
       image: gcr.io/att-equality-first/acai-gh-actions-workers:v1.0.0
       credentials:
         username: oauth2accesstoken
-        password: ${{ secrets.DOCKER_HUB_PASSWORD}}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
