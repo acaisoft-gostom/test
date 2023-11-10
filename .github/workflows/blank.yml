@@ -34,14 +34,15 @@ on:
 #         run: |
 #           echo Add other actions to build,
 #           echo test, and deploy your project.
+
 jobs:
   Android:
     runs-on: ubuntu-latest
     container:
       image: gcr.io/att-equality-first/acai-gh-actions-workers:v1.0.0
       credentials:
-        username: oauth2accesstoken
-        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+        username: _json_key
+        password: ${{ secrets.SERVICE_ACCOUNT_KEY }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
@@ -54,4 +55,19 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-          echo test, and deploy your project. 
+         echo test, and deploy your project. 
+# jobs:
+#   container-test-job:
+#     runs-on: ubuntu-latest
+#     container:
+#       image: gcr.io/att-equality-first/acai-gh-actions-workers:v1.0.0
+#       env:
+#         NODE_ENV: development
+#       ports:
+#         - 80
+#       volumes:
+#         - my_docker_volume:/volume_mount
+#       options: --cpus 1
+#     steps:
+#       - name: Check for dockerenv file
+#         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
